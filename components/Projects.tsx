@@ -29,32 +29,32 @@ export default function Projects() {
   ];
 
   return (
-    <section className="relative w-full bg-[#121212] py-32 px-6 md:px-12 lg:px-24 z-20">
+    <section className="relative w-full bg-[#121212] py-20 md:py-32 px-4 md:px-12 lg:px-24 z-20">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-20">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-6">
+        <div className="mb-12 md:mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tighter text-white mb-4 md:mb-6">
             Projects & Certifications
           </h2>
-          <div className="h-1 w-24 bg-white/20 rounded-full" />
+          <div className="h-1 w-16 md:w-24 bg-white/20 rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12">
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="group relative flex flex-col rounded-3xl bg-white/[0.03] border border-white/[0.05] p-8 md:p-10 backdrop-blur-md overflow-hidden transition-all duration-500 hover:bg-white/[0.08] hover:border-white/[0.15] hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(255,255,255,0.05)] cursor-pointer"
+              className="group relative flex flex-col rounded-2xl md:rounded-3xl bg-white/[0.03] border border-white/[0.05] p-6 md:p-10 backdrop-blur-md overflow-hidden transition-all duration-500 hover:bg-white/[0.08] hover:border-white/[0.15] hover:-translate-y-2 lg:hover:shadow-[0_0_40px_rgba(255,255,255,0.05)] cursor-pointer"
             >
               {/* Subtle hover glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.05] to-transparent opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500" />
               
               <div className="relative z-10">
-                <p className="text-sm font-medium text-gray-400 mb-3 tracking-wider uppercase">
+                <p className="text-xs md:text-sm font-medium text-gray-400 mb-2 md:mb-3 tracking-wider uppercase">
                   {project.category}
                 </p>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 text-lg font-light leading-relaxed mb-8">
+                <p className="text-gray-300 md:text-gray-400 text-base md:text-lg font-light leading-relaxed mb-6 md:mb-8">
                   {project.description}
                 </p>
               </div>
