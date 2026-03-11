@@ -23,29 +23,28 @@ export default function ScrollyCanvas() {
   useEffect(() => {
     // 1. Preload images sequence
     const loadImages = async () => {
-      const loadedImages: HTMLImageElement[] = [];
-
-      for (let i = 0; i < TOTAL_FRAMES; i++) {
-        const img = new Image();
-        // Format the index with 3 digits, e.g., 000, 001... 191
-        const indexStr = i.toString().padStart(3, "0");
-        const src = `/sequence/frame_${indexStr}_delay-0.041s.png`;
-        img.src = src;
-
-        await new Promise((resolve) => {
-          img.onload = () => {
-            loadedImages.push(img);
-            resolve(true);
-          };
+      // Create promises for all images to load in parallel
+      const imagePromises = Array.from({ length: TOTAL_FRAMES }).map((_, i) => {
+        return new Promise<HTMLImageElement>((resolve) => {
+          const img = new Image();
+          const indexStr = i.toString().padStart(3, "0");
+          img.src = `/sequence/frame_${indexStr}_delay-0.041s.png`;
+          
+          img.onload = () => resolve(img);
           img.onerror = () => {
              console.warn(`Failed to load frame ${i}`);
-             // Push an empty image or the last loaded one to prevent breaking the sequence
-             loadedImages.push(loadedImages[loadedImages.length - 1] || new Image());
-             resolve(false);
-          }
+             resolve(img); // resolve anyway to not break Promise.all
+          };
         });
-      }
-      setImages(loadedImages);
+      });
+
+      // Await just the first frame so we can paint the starting canvas immediately
+      const firstFrame = await imagePromises[0];
+      setImages([firstFrame]);
+
+      // Then await the rest in the background
+      const allLoadedImages = await Promise.all(imagePromises);
+      setImages(allLoadedImages);
     };
 
     loadImages();
