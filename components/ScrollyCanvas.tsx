@@ -28,7 +28,7 @@ export default function ScrollyCanvas() {
         return new Promise<HTMLImageElement>((resolve) => {
           const img = new Image();
           const indexStr = i.toString().padStart(3, "0");
-          img.src = `/sequence/frame_${indexStr}_delay-0.041s.png`;
+          img.src = `/sequence/frame_${indexStr}_delay-0.041s.webp`;
           
           img.onload = () => resolve(img);
           img.onerror = () => {
