@@ -1,6 +1,7 @@
 import ScrollyCanvas from "@/components/ScrollyCanvas";
 import Overlay from "@/components/Overlay";
 import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
@@ -11,6 +12,9 @@ export default function Home() {
         {/* Overlay is absolutely positioned over the 500vh area to track scroll alongside the canvas */}
         <Overlay />
       </div>
+
+      {/* Skills grid placed before projects */}
+      <Skills />
 
       {/* Projects grid placed below the 500vh scrollytelling section */}
       <Projects />
