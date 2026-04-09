@@ -30,3 +30,13 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  
+  a, button, input, select, textarea, [role="button"] {
+    cursor: none;
+  }
+}
