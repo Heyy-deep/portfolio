@@ -18,17 +18,41 @@ export default function Projects() {
 
   const certificationsList = [
     {
-      title: "Advanced System Security",
-      category: "Certification (2024)",
-      description: "Completed advanced coursework in system security topics provided by the University of Colorado via Coursera.",
-      tech: ["Cybersecurity", "Protocols", "Coursera"],
+      title: "Google Cloud Study Jams 2025 Tier 1",
+      category: "Google Cloud (2025)",
+      description: "Successfully completed Tier 1 of the Google Cloud Study Jams, mastering core cloud infrastructure, networking, and deployment concepts on GCP.",
+      tech: ["Google Cloud Platform", "Infrastructure", "Qwiklabs"],
+    },
+    {
+      title: "AI Fundamentals",
+      category: "Google (2026)",
+      description: "Completed comprehensive training on core Artificial Intelligence and Machine Learning paradigms, led by Google.",
+      tech: ["Artificial Intelligence", "Machine Learning", "Google"],
+    },
+    {
+      title: "Introduction to DevOps",
+      category: "IBM (2026)",
+      description: "Mastered essential DevOps philosophies, including Continuous Integration / Continuous Deployment (CI/CD) pipelines and Agile practices.",
+      tech: ["DevOps", "CI/CD", "Agile", "IBM"],
     },
     {
       title: "Gemini Certified Student",
-      category: "Google Certification (2026)",
-      description: "Achieved Gemini Certified University Student status through Google for Education, showcasing proficiency in AI tooling.",
-      tech: ["Generative AI", "Google Workspace"],
+      category: "Google for Education (2026)",
+      description: "Achieved university-level certification showcasing proficiency and applied engineering using Google's generative AI tooling.",
+      tech: ["Generative AI", "LLMs", "Google Workspace"],
     },
+    {
+      title: "Advanced System Security Topics",
+      category: "University of Colorado System (2024)",
+      description: "Completed advanced coursework covering network security, cryptography, and modern protocol vulnerabilities.",
+      tech: ["Cybersecurity", "Cryptography", "Network Security"],
+    },
+    {
+      title: "Information Theory",
+      category: "The Chinese University of Hong Kong (2025)",
+      description: "Studied the mathematical foundations of information compression, signal transmission, and entropy.",
+      tech: ["Mathematics", "Data Theory", "Algorithms"],
+    }
   ];
 
   const renderCard = (item: any, idx: number) => (
