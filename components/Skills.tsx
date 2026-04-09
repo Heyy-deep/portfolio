@@ -7,7 +7,7 @@ export default function Skills() {
     },
     {
       title: "💻 Web Development",
-      isPrimary: true,
+      isPrimary: false,
       skills: [
         "HTML5",
         "CSS3",
@@ -32,7 +32,7 @@ export default function Skills() {
     {
       title: "🛠️ Tools & Technologies",
       isPrimary: false,
-      skills: ["Git", "Postman", "Spyder", "JIRA"],
+      skills: ["Git", "Spyder", "JIRA"],
     },
     {
       title: "🖧 Networking & Systems",
@@ -48,7 +48,7 @@ export default function Skills() {
     {
       title: "🤖 AI Tools",
       isPrimary: false,
-      skills: ["Claude AI", "Blackbox AI"],
+      skills: ["Claude AI", "Blackbox AI", "Antigravity"],
     },
   ];
 
